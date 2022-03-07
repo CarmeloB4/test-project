@@ -1,6 +1,11 @@
-# TestProject
+# Project - Should I stay or should I go 🏃📽️
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+
+This file will be updated in time, to be complete at the end of the project. All information relating to development, functionality and references to any libraries will be written here 📗
+
+## Design reference 🎨
+This is the draft on which the layout and flow of this project is based: [Figma](https://www.figma.com/file/iS8EY0ZxQqCz15J5Jjy2Ju/Prototype---Project?node-id=0%3A1)
 
 ## Development server
 
