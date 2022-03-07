@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./modules/homepage/homepage.module').then((m) => m.HomepageModule),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
