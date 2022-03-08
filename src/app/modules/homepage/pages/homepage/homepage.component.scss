@@ -4,6 +4,7 @@
   height: 100vh;
   background: rgb(17,16,16);
   background: linear-gradient(45deg, rgba(17,16,16,1) 62%, rgba(38,38,37,0.9948354341736695) 90%);
+  overflow: hidden;
 
   .weather-container {
     .search {
@@ -11,7 +12,16 @@
         width: 400px;
         border: none;
         height: 40px;
+
+        &:focus {
+          outline: none;
+        }
+
+        @media screen and (max-width: 767px){
+          width: 200px;
+        }
       }
+
       button {
         width: 80px;
         background-color: #000;
@@ -19,5 +29,22 @@
         border: 1px solid #000;
       }
     }
+
+    .cta-button {
+      width: 300px;
+      height: 40px;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      border: 0.5px solid #fa9470;
+      transition: transform .7s ease-in-out;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        transform: rotate(360deg);
+      }
+    }
   }
 }
+
