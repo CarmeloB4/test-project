@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../service/api.service';
+import {WeatherFacade} from "../../../../shared/store/facades/weather.facade";
 
 @Component({
   selector: 'app-homepage',
@@ -8,10 +8,18 @@ import { ApiService } from '../../service/api.service';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private apiService:ApiService) { }
+  constructor(private weatherFacade: WeatherFacade) { }
 
   ngOnInit(): void {
-    this.apiService.getWeather().subscribe((x) => console.log(x))
+    this.weather()
+  }
+
+  public getCurrentWeather():void {
+    this.weatherFacade.getCurrentWeather('Palermo')
+  }
+
+  private weather():void {
+    this.weatherFacade.weather$().subscribe((x) => console.log(x))
   }
 
 }
