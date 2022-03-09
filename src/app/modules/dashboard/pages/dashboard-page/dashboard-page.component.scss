@@ -1,0 +1,31 @@
+@import "src/assets/scss/functions";
+@import "src/assets/scss/variables";
+
+.main-wrapper {
+  .logo {
+    img {
+      width: rem(200px);
+      cursor: pointer;
+    }
+  }
+
+  .main-content {
+    .cta-film {
+      font-family: $martel-sans;
+      font-weight: bold;
+      width: rem(380px);
+      height: rem(40px);
+      color: #fff;
+      background-color: firebrick;
+      border: none;
+      transition: transform .7s ease-in-out;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid firebrick;
+        transform: rotateY(360deg);
+      }
+    }
+  }
+}

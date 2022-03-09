@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-sport-card',
   templateUrl: './sport-card.component.html',
   styleUrls: ['./sport-card.component.scss']
 })
-export class SportCardComponent implements OnInit {
+export class SportCardComponent {
+@Input() sport!:string;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

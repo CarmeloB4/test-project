@@ -1,7 +1,12 @@
 <div class="main-wrapper d-flex flex-column">
-  <div class="d-flex flex-column align-items-center">
-    <app-weather-info-card></app-weather-info-card>
-    <app-sport-card></app-sport-card>
-    <!-- add button for netflix -->
+  <div class="logo p-1 ml-2">
+    <img src="assets/images/brand/logo.png" alt="logo" routerLink="">
+  </div>
+  <div class="main-content d-flex flex-column align-items-center">
+    <app-weather-info-card [currentWeather]="currentWeather"></app-weather-info-card>
+    <div class="d-flex align-items-center justify-content-between mt-2">
+      <app-sport-card *ngFor="let sport of recommendedSports" [sport]="sport" class="p-1"></app-sport-card>
+    </div>
+    <button class="cta-film mt-2 font-weight-bold">Do you want to watch a film?</button>
   </div>
 </div>

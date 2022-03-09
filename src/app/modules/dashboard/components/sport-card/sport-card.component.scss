@@ -1,0 +1,22 @@
+@import "src/assets/scss/functions";
+
+.sport-card-container {
+  width: rem(90px);
+  height: rem(40px);
+  border-radius: rem(5px);
+  background-color: #273d3d;
+
+  h1 {
+    font-size: rem(18px);
+    color: #fff;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #fff;
+
+    h1 {
+      color: #273d3d;
+    }
+  }
+}

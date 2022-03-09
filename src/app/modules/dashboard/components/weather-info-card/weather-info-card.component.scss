@@ -1,0 +1,22 @@
+@import "src/assets/scss/functions";
+@import "src/assets/scss/variables";
+
+.weather-info-container {
+  width: rem(400px);
+  height: rem(100px);
+  background-color: $grey;
+  color: #fff;
+  border-radius: rem(10px);
+
+  img {
+    width: rem(30px);
+  }
+
+  h1 {
+    font-size: rem(20px);
+  }
+
+  h2 {
+    font-size: rem(16px);
+  }
+}

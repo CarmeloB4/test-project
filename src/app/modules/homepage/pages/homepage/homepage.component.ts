@@ -10,7 +10,7 @@ import { Subject, takeUntil } from "rxjs";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit, OnDestroy {
-  public currentWeather!:Weather | null;
+  public currentWeather!: Weather | null;
   public cityForm = this.fb.control('', Validators.required);
 
   private destroy$ = new Subject();
@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
     this.setWeatherData()
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.destroy$.complete();
   }
 
