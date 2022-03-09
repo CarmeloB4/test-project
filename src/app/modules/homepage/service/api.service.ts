@@ -17,7 +17,6 @@ export class ApiService {
       .set('query', city)
     return this.http.get<WeatherResponse>(environment.APY_URL_WEATHER, { params })
       .pipe(
-        tap((x) => console.log(x)),
         map((response) => Weather.Build(response)));
   }
 }

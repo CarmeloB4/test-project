@@ -46,6 +46,7 @@ export class Weather {
   protected constructor(
     public temperature = 0,
     public uv_index = 0,
+    public wind_speed = 0,
     public weather_descriptions = [''],
     public weather_icons = [''],
     public country = '',
@@ -53,6 +54,6 @@ export class Weather {
   ) {}
 
   public static Build(weather: WeatherResponse): Weather {
-    return new this(weather.current.temperature, weather.current.uv_index, weather.current.weather_descriptions, weather.current.weather_icons, weather.location.country, weather.location.name);
+    return new this(weather.current.temperature, weather.current.uv_index, weather.current.wind_speed, weather.current.weather_descriptions, weather.current.weather_icons, weather.location.country, weather.location.name);
   }
 }
