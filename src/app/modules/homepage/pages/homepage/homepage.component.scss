@@ -6,6 +6,12 @@
   background: linear-gradient(45deg, rgba(17,16,16,1) 62%, rgba(38,38,37,0.9948354341736695) 90%);
   overflow: hidden;
 
+  .logo {
+    img {
+      width: 200px;
+    }
+  }
+
   .weather-container {
     .search {
       input {
@@ -27,6 +33,10 @@
         background-color: #000;
         color: #fff;
         border: 1px solid #000;
+
+        &:disabled {
+          background-color: dimgray;
+        }
       }
     }
 
@@ -42,7 +52,7 @@
       &:hover {
         background-color: #fff;
         color: #000;
-        transform: rotate(360deg);
+        transform: rotateX(360deg);
       }
     }
   }

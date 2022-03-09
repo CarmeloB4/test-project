@@ -1,6 +1,18 @@
 <div class="main-container d-flex flex-column p-4">
-<!--  <img>-->
-  <h1>Palermo</h1>
-  <h3>Parzialmente nuvoloso</h3>
-  <h3>4°</h3>
+  <div class="d-flex justify-content-between mb-3 align-items-center">
+    <h3 class="temperature">{{currentWeather?.temperature}}°</h3>
+    <img [src]="currentWeather!.weather_icons[0]" alt="weather-icon">
+  </div>
+  <h1>{{currentWeather?.name}}</h1>
+  <h2>{{currentWeather?.country}}</h2>
+  <hr>
+  <h3 class="text-secondary">Description: <span class="text-white">{{currentWeather!.weather_descriptions[0]}}</span></h3>
+  <div class="d-flex justify-content-start align-items-center mt-1">
+    <h4>UV Index: <span class="text-white ms-2">{{currentWeather?.uv_index}}</span></h4>
+    <img src="assets/images/icons/sun.png" alt="sun-icon" class="icon ms-2 mb-2">
+  </div>
+  <div class="d-flex justify-content-start align-items-center">
+    <h4 id="wind">Wind Speed: <span class="text-white ms-2">{{currentWeather?.wind_speed}} km/h</span></h4>
+    <img src="assets/images/icons/wind.png" alt="sun-icon" class="icon ms-2 mb-2">
+  </div>
 </div>

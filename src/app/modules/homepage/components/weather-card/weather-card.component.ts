@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Weather } from "../../../../shared/models/weather.model";
 
 @Component({
   selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
   styleUrls: ['./weather-card.component.scss']
 })
-export class WeatherCardComponent implements OnInit {
-
+export class WeatherCardComponent {
+@Input() currentWeather!:Weather | null;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
