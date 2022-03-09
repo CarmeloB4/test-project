@@ -1,10 +1,10 @@
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ApiService } from "../../../modules/homepage/service/api.service";
 import { Injectable } from "@angular/core";
-import {getWeather, getWeatherSuccess} from "../actions/weather.action";
-import {exhaustMap, map} from "rxjs";
-import {Store} from "@ngrx/store";
-import {AppState} from "../selectors/weather.selector";
+import { getWeather, getWeatherSuccess } from "../actions/weather.action";
+import { exhaustMap, map } from "rxjs";
+import { Store } from "@ngrx/store";
+import { AppState } from "../selectors/weather.selector";
 
 
 @Injectable()
