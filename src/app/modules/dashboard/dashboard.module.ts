@@ -4,6 +4,7 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { WeatherInfoCardComponent } from './components/weather-info-card/weather-info-card.component';
 import { SportCardComponent } from './components/sport-card/sport-card.component';
+import {MaterialModule} from "../../shared/modules/material.module";
 
 
 
@@ -15,7 +16,8 @@ import { SportCardComponent } from './components/sport-card/sport-card.component
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MaterialModule
   ]
 })
 export class DashboardModule { }

@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
-export const MODULES = [];
+export const MODULES = [
+  MatDialogModule
+];
 
 @NgModule({
   declarations: [],

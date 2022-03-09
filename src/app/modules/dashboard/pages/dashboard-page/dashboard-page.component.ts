@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Weather} from "../../../../shared/models/weather.model";
 import {Subject, takeUntil} from "rxjs";
 import {WeatherFacade} from "../../../../shared/store/facades/weather.facade";
+import {ApiFilmService} from "../../services/api/api-film.service";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -13,11 +14,12 @@ export class DashboardPageComponent implements OnInit {
   public recommendedSports!: string[];
   private sports = ["tennis", "running", "padel", "crossfit", "cycling", "football", "yoga", "gym"];
   private destroy$ = new Subject();
-  constructor(private readonly weatherFacade: WeatherFacade) { }
+  constructor(private readonly weatherFacade: WeatherFacade, private service:ApiFilmService) { }
 
   ngOnInit(): void {
     this.getWeatherData();
     this.getSports();
+    this.service.getRandomFilm().subscribe((x) => console.log(x))
   }
 
   ngOnDestroy(): void {
