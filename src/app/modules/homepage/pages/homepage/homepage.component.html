@@ -1,13 +1,15 @@
 <div class="main-wrapper d-flex flex-column gap-5">
-  <div class="p-2">Logo</div>
+  <div class="logo p-1 ml-2">
+    <img src="assets/images/brand/logo.png" alt="logo">
+  </div>
   <div class="weather-container d-flex flex-column align-items-center">
-    <div class="search d-flex justify-content-around mt-4">
-      <input type="text" placeholder="Insert City...">
-      <button class="ms-2">Search</button>
+    <div class="search d-flex justify-content-around mt-4 mb-4">
+      <input type="text" placeholder="Insert City..." [formControl]="cityForm">
+      <button class="ms-2" (click)="getCurrentWeather()" [disabled]="!cityForm.valid">Search</button>
     </div>
-    <ng-container>
-      <app-weather-card class="mt-4"></app-weather-card>
-      <button class="cta-button mt-2" routerLink="/dashboard">Should I Stay or Should I go</button>
+    <ng-container *ngIf="currentWeather">
+      <app-weather-card class="mt-4" [currentWeather]="currentWeather"></app-weather-card>
+      <button class="cta-button mt-4">Should I Stay or Should I go</button>
     </ng-container>
   </div>
 </div>
