@@ -3,6 +3,8 @@ import {Weather} from "../../../../shared/models/weather.model";
 import {Subject, takeUntil} from "rxjs";
 import {WeatherFacade} from "../../../../shared/store/facades/weather.facade";
 import {ApiFilmService} from "../../services/api/api-film.service";
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -14,7 +16,7 @@ export class DashboardPageComponent implements OnInit {
   public recommendedSports!: string[];
   private sports = ["tennis", "running", "padel", "crossfit", "cycling", "football", "yoga", "gym"];
   private destroy$ = new Subject();
-  constructor(private readonly weatherFacade: WeatherFacade, private service:ApiFilmService) { }
+  constructor(public dialog: MatDialog, private readonly weatherFacade: WeatherFacade, private service:ApiFilmService) { }
 
   ngOnInit(): void {
     this.getWeatherData();
@@ -24,6 +26,13 @@ export class DashboardPageComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.destroy$.complete();
+  }
+
+  public openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {name: 'Mario', animal: 'Dog'},
+    });
   }
 
   private getSports(): void {

@@ -3,7 +3,7 @@
     <img src="assets/images/brand/logo.png" alt="logo">
   </div>
   <div class="weather-container d-flex flex-column align-items-center">
-    <div class="search d-flex justify-content-around mt-4 mb-4">
+    <div class="search d-flex justify-content-around mb-4">
       <input type="text" placeholder="Insert City..." [formControl]="cityForm">
       <button class="ms-2" (click)="getCurrentWeather()" [disabled]="!cityForm.valid">Search</button>
     </div>

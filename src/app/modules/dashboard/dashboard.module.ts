@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { WeatherInfoCardComponent } from './components/weather-info-card/weather-info-card.component';
 import { SportCardComponent } from './components/sport-card/sport-card.component';
 import {MaterialModule} from "../../shared/modules/material.module";
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 
@@ -12,7 +13,8 @@ import {MaterialModule} from "../../shared/modules/material.module";
   declarations: [
     DashboardPageComponent,
     WeatherInfoCardComponent,
-    SportCardComponent
+    SportCardComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
