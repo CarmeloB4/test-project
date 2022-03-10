@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ weather: weatherReducer }),
+    StoreModule.forRoot({ weatherState: weatherReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
     EffectsModule.forRoot([WeatherEffects]),
     BrowserAnimationsModule,
