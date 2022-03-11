@@ -28,9 +28,9 @@ export class DashboardPageComponent implements OnInit {
     this.destroy$.complete();
   }
 
-  public openDialog(): void {
+  public openDialog(isStay:boolean): void {
     this.dialog.open(DialogComponent, {
-      data: {isStay: false},
+      data: {isStay},
     });
   }
 

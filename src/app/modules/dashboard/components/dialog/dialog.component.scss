@@ -8,6 +8,15 @@
   background-color: $grey;
   border-radius: rem(10px);
 
+  h1 {
+    font-size: rem(30px);
+  }
+
+  h3 {
+    color: #ffd740;
+    font-size: rem(22px);
+  }
+
   .film-card {
     img {
       width: rem(300px);
@@ -33,7 +42,9 @@
 
     .calculate {
       button {
-        height: rem(35px);
+        height: rem(40px);
+        width: rem(80px);
+        border-radius: rem(5px);
         background-color: #273d3d;
         color: #fff;
         border: none;

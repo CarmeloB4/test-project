@@ -2,7 +2,7 @@
   <ng-container *ngIf="data.isStay; else goOut">
     <div class="film-card">
       <h1>Film name</h1>
-      <img src="https://via.placeholder.com/350">
+      <img src="https://via.placeholder.com/350" alt="film-preview" class="mt-2">
       <p class="mt-4">Lorem ipsum description</p>
       <div class="rate text-center p-1">
         <span>8</span>
@@ -12,22 +12,22 @@
   <ng-template #goOut>
     <div class="sport-card d-flex flex-column">
       <h1>Sport name</h1>
-      <div>
+      <div class="mt-4">
         <h3>Insert your weigth</h3>
         <mat-slider
-          class="mt-4"
+          class="mt-2"
           [max]="200"
           [min]="30"
           [thumbLabel]="true"
           [(ngModel)]="userWeigth"
         >
         </mat-slider>
-        {{userWeigth}}
+        <span class="ms-3 font-weight-bold">{{userWeigth}}</span>
       </div>
-      <div>
+      <div class="mt-4">
         <h3>Insert time of activity</h3>
         <mat-slider
-          class="mt-4"
+          class="mt-2"
           [max]="5"
           [min]="0"
           [tickInterval]="5"
@@ -35,19 +35,16 @@
           [(ngModel)]="timeOfActivity"
         >
         </mat-slider>
-        {{timeOfActivity}}
+        <span class="ms-3 font-weight-bold">{{timeOfActivity}}</span>
       </div>
       <div class="calculate align-self-center mt-4">
-        <button>Calcola</button>
+        <button>Calculate</button>
       </div>
       <div class="align-self-center mt-5">
         <h2>250 kcal</h2>
       </div>
     </div>
   </ng-template>
-<!--  <div mat-dialog-content>-->
-<!--    <p>What's your favorite animal?</p>-->
-<!--  </div>-->
   <div mat-dialog-actions class="back-dashboard align-self-center">
     <button (click)="onNoClick()">Back to dashboard</button>
   </div>
