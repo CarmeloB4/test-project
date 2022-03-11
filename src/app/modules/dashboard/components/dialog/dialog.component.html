@@ -12,7 +12,7 @@
   </ng-container>
   <ng-template #goOut>
     <div class="sport-card d-flex flex-column">
-      <h1>Sport name</h1>
+      <h1>{{data.sport | titlecase}}</h1>
       <div class="mt-4">
         <h3>Insert your weigth</h3>
         <mat-slider
@@ -39,10 +39,10 @@
         <span class="ms-3 font-weight-bold">{{timeOfActivity}}</span>
       </div>
       <div class="calculate align-self-center mt-4">
-        <button>Calculate</button>
+        <button (click)="calculateCalories.emit({ sport: data.sport, weigth: userWeigth, timeOfActivity })">Calculate</button>
       </div>
       <div class="align-self-center mt-5">
-        <h2>250 kcal</h2>
+        <h2>{{data.calories}}</h2>
       </div>
     </div>
   </ng-template>

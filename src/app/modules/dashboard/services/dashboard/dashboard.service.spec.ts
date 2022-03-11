@@ -45,5 +45,35 @@ describe('FilmService', () => {
       expect(service.getSports(8)).toEqual(indoorSports);
     });
 
+    it('should return an outdoor sports if temperature is 20 degrees', () => {
+      const indoorSports = sports.filter((s) => !s.outdoor)
+      expect(service.getSports(20)).not.toEqual(indoorSports);
+    });
+
   });
+
+  describe('getCalculatedCalories', () => {
+    let result: number;
+
+    it('should return a number', () => {
+      service.getCalculatedCalories("tennis",60,4).subscribe((response) => {
+        return result = response
+      });
+      expect(result).toBeDefined();
+    });
+
+    it('should return a number to be greater than 100', () => {
+      service.getCalculatedCalories("football",60,4).subscribe((response) => {
+        return result = response
+      });
+      expect(result).toBeGreaterThan(100);
+    });
+
+    it('should return a number to be greater than 100', () => {
+      service.getCalculatedCalories("football",80,1).subscribe((response) => {
+        return result = response
+      });
+      expect(result).toBeLessThan(500);
+    });
+  })
 });

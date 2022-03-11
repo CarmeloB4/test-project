@@ -3,7 +3,7 @@ import {Weather} from "../../../../shared/models/weather.model";
 import {Subject, takeUntil} from "rxjs";
 import {WeatherFacade} from "../../../../shared/store/facades/weather.facade";
 import {ApiFilmService} from "../../services/api/api-film.service";
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import {Film} from "../../../../shared/models/film.model";
 import {DashboardService, Sports} from "../../services/dashboard/dashboard.service";
@@ -28,17 +28,21 @@ export class DashboardPageComponent implements OnInit {
     this.destroy$.complete();
   }
 
-  public openDialog(isStay:boolean, payload?: Film): void {
-    this.dialog.open(DialogComponent, {
-      data: {isStay, payload},
+  public openDialog(isStay:boolean, sport?: string, payload?: Film,): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {isStay, sport, payload},
     });
+
+    dialogRef.componentInstance.calculateCalories.subscribe((result) => {
+      dialogRef.componentInstance.data = {isStay, calories: 100}
+    })
   }
 
   public getRandomFilm(): void {
     this.service.getRandomFilm()
       .pipe(takeUntil(this.destroy$))
       .subscribe((response) => {
-      this.openDialog(true,response)
+      this.openDialog(true, undefined, response)
     })
   }
 
