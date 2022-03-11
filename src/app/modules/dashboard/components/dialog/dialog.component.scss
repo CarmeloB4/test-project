@@ -1,0 +1,37 @@
+@import "src/assets/scss/variables";
+@import "src/assets/scss/functions";
+
+.dialog {
+  width: rem(300px);
+  height: rem(500px);
+  color: #fff;
+  background-color: $grey;
+  border-radius: rem(10px);
+
+  .film-card {
+    img {
+      width: rem(300px);
+      height: rem(200px);
+    }
+
+    .rate {
+      width: rem(30px);
+      height: rem(30px);
+      border-radius: 50%;
+      background-color: #fff;
+
+      span {
+        color: #000;
+      }
+    }
+  }
+
+  .back-dashboard {
+    button {
+      height: rem(35px);
+      background-color: #fff;
+      color: #000;
+      border: none;
+    }
+  }
+}

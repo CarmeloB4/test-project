@@ -1,8 +1,32 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+<div class="dialog d-flex flex-column justify-content-between">
+  <ng-container *ngIf="data.isStay; else goOut">
+    <div class="film-card">
+      <h1>Film name</h1>
+      <img src="https://via.placeholder.com/350">
+      <p class="mt-4">Lorem ipsum description</p>
+      <div class="rate text-center p-1">
+        <span>8</span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #goOut>
+    <div class="sport-card">
+      <h1>Sport name</h1>
+      <mat-slider
+        class="mt-4"
+        [max]="200"
+        [min]="0"
+        [thumbLabel]="true"
+        [(ngModel)]="weigth"
+        aria-labelledby="example-name-label">
+      </mat-slider>
+    </div>
+  </ng-template>
+<!--  <div mat-dialog-content>-->
+<!--    <p>What's your favorite animal?</p>-->
+<!--  </div>-->
+  <div mat-dialog-actions class="back-dashboard align-self-center">
+    <button (click)="onNoClick()">Back to dashboard</button>
+  </div>
 </div>
-<div mat-dialog-actions>
-  <button (click)="onNoClick()">No Thanks</button>
-  <button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
-</div>
+

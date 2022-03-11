@@ -29,9 +29,8 @@ export class DashboardPageComponent implements OnInit {
   }
 
   public openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '250px',
-      data: {name: 'Mario', animal: 'Dog'},
+    this.dialog.open(DialogComponent, {
+      data: {isStay: false},
     });
   }
 

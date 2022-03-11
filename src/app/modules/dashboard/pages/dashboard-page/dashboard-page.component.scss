@@ -22,13 +22,11 @@
       color: #fff;
       background-color: firebrick;
       border: none;
-      transition: transform .7s ease-in-out;
 
       &:hover {
         background-color: #fff;
         color: #000;
         border: 2px solid firebrick;
-        transform: rotateY(360deg);
       }
     }
   }

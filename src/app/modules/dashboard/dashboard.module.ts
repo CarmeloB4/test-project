@@ -6,6 +6,7 @@ import { WeatherInfoCardComponent } from './components/weather-info-card/weather
 import { SportCardComponent } from './components/sport-card/sport-card.component';
 import {MaterialModule} from "../../shared/modules/material.module";
 import { DialogComponent } from './components/dialog/dialog.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -19,6 +20,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    FormsModule,
     MaterialModule
   ]
 })
