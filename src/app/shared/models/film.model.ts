@@ -13,7 +13,7 @@ export interface FilmResponse {
   original_title?: string;
   overview: string;
   popularity?: number;
-  poster_path: string | null;
+  poster_path: string;
   production_companies?: Object[];
   production_countries?: Object[];
   release_date: string;
@@ -32,12 +32,13 @@ export class Film {
   protected constructor(
     public id = 0,
     public overview = "",
+    public poster_path = "",
     public release_date = "",
     public title = '',
     public vote_average = 0,
   ) {}
 
   public static Build(film: FilmResponse): Film {
-    return new this(film.id, film.overview, film.release_date, film.title, film.vote_average);
+    return new this(film.id, film.overview, film.poster_path, film.release_date, film.title, film.vote_average);
   }
 }

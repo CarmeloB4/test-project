@@ -1,11 +1,12 @@
 <div class="dialog d-flex flex-column justify-content-between">
   <ng-container *ngIf="data.isStay; else goOut">
     <div class="film-card">
-      <h1>Film name</h1>
-      <img src="https://via.placeholder.com/350" alt="film-preview" class="mt-2">
-      <p class="mt-4">Lorem ipsum description</p>
+      <h1>Title: {{data.payload.title}}</h1>
+      <h5>{{data.payload.release_date | date: 'yyyy'}}</h5>
+      <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{data.payload.poster_path}}" alt="{{data.payload.title}}" class="mt-2">
+      <p class="mt-4">{{data.payload.overview}}</p>
       <div class="rate text-center p-1">
-        <span>8</span>
+        <span>{{data.payload.vote_average}}</span>
       </div>
     </div>
   </ng-container>

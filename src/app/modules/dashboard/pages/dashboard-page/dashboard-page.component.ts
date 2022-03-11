@@ -5,6 +5,7 @@ import {WeatherFacade} from "../../../../shared/store/facades/weather.facade";
 import {ApiFilmService} from "../../services/api/api-film.service";
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
+import {Film} from "../../../../shared/models/film.model";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -21,17 +22,22 @@ export class DashboardPageComponent implements OnInit {
   ngOnInit(): void {
     this.getWeatherData();
     this.getSports();
-    this.service.getRandomFilm().subscribe((x) => console.log(x))
   }
 
   ngOnDestroy(): void {
     this.destroy$.complete();
   }
 
-  public openDialog(isStay:boolean): void {
+  public openDialog(isStay:boolean, payload?: Film): void {
     this.dialog.open(DialogComponent, {
-      data: {isStay},
+      data: {isStay, payload},
     });
+  }
+
+  public getRandomFilm(): void {
+    this.service.getRandomFilm().subscribe((response) => {
+      this.openDialog(true,response)
+    })
   }
 
   private getSports(): void {

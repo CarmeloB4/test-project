@@ -8,6 +8,6 @@
     <div class="d-flex align-items-center justify-content-between mt-1">
       <app-sport-card *ngFor="let sport of recommendedSports" [sport]="sport" class="p-1" (click)="openDialog(false)"></app-sport-card>
     </div>
-    <button class="cta-film mt-4 font-weight-bold" (click)="openDialog(true)">Do you want to watch a film?</button>
+    <button class="cta-film mt-4 font-weight-bold" (click)="getRandomFilm()">Do you want to watch a film?</button>
   </div>
 </div>
