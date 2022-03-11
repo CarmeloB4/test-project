@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
   APY_KEY_WEATHER: "086db3deaa28d7ad5f9656dab694ba31",
-  APY_URL_WEATHER: "http://api.weatherstack.com/current",
-  APY_KEY_FILM: "3631f6c69e76908c0dafd1d22c7e4256",
+  APY_URL_WEATHER: 'http://api.weatherstack.com/current'
 };
 
 /*
