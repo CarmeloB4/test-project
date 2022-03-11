@@ -10,16 +10,39 @@
     </div>
   </ng-container>
   <ng-template #goOut>
-    <div class="sport-card">
+    <div class="sport-card d-flex flex-column">
       <h1>Sport name</h1>
-      <mat-slider
-        class="mt-4"
-        [max]="200"
-        [min]="0"
-        [thumbLabel]="true"
-        [(ngModel)]="weigth"
-        aria-labelledby="example-name-label">
-      </mat-slider>
+      <div>
+        <h3>Insert your weigth</h3>
+        <mat-slider
+          class="mt-4"
+          [max]="200"
+          [min]="30"
+          [thumbLabel]="true"
+          [(ngModel)]="userWeigth"
+        >
+        </mat-slider>
+        {{userWeigth}}
+      </div>
+      <div>
+        <h3>Insert time of activity</h3>
+        <mat-slider
+          class="mt-4"
+          [max]="5"
+          [min]="0"
+          [tickInterval]="5"
+          [thumbLabel]="true"
+          [(ngModel)]="timeOfActivity"
+        >
+        </mat-slider>
+        {{timeOfActivity}}
+      </div>
+      <div class="calculate align-self-center mt-4">
+        <button>Calcola</button>
+      </div>
+      <div class="align-self-center mt-5">
+        <h2>250 kcal</h2>
+      </div>
     </div>
   </ng-template>
 <!--  <div mat-dialog-content>-->

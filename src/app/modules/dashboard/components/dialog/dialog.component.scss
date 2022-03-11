@@ -26,6 +26,21 @@
     }
   }
 
+  .sport-card {
+    mat-slider {
+      width: rem(200px);
+    }
+
+    .calculate {
+      button {
+        height: rem(35px);
+        background-color: #273d3d;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+
   .back-dashboard {
     button {
       height: rem(35px);
