@@ -6,6 +6,7 @@ import {ApiFilmService} from "../../services/api/api-film.service";
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import {Film} from "../../../../shared/models/film.model";
+import {DashboardService, Sports} from "../../services/dashboard/dashboard.service";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -15,9 +16,8 @@ import {Film} from "../../../../shared/models/film.model";
 export class DashboardPageComponent implements OnInit {
   public currentWeather!: Weather | null;
   public recommendedSports!: string[];
-  private sports = ["tennis", "running", "padel", "crossfit", "cycling", "football", "yoga", "gym"];
   private destroy$ = new Subject();
-  constructor(public dialog: MatDialog, private readonly weatherFacade: WeatherFacade, private service:ApiFilmService) { }
+  constructor(public dialog: MatDialog, private readonly weatherFacade: WeatherFacade, private service:ApiFilmService, private serviceDashboard: DashboardService) { }
 
   ngOnInit(): void {
     this.getWeatherData();
@@ -35,13 +35,18 @@ export class DashboardPageComponent implements OnInit {
   }
 
   public getRandomFilm(): void {
-    this.service.getRandomFilm().subscribe((response) => {
+    this.service.getRandomFilm()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((response) => {
       this.openDialog(true,response)
     })
   }
 
   private getSports(): void {
-    this.recommendedSports = this.sports.slice(4)
+    if (this.currentWeather) {
+      const response = this.serviceDashboard.getSports(this.currentWeather?.temperature);
+      response ? this.recommendedSports = response.map((s) => s.sport) : null;
+    }
   }
 
   private getWeatherData(): void {
