@@ -44,3 +44,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .mat-slider.mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb {
   background-color: #fff;
 }
+
+mat-spinner {
+  z-index: 10;
+}
+
+.mat-spinner circle {
+  stroke: #fff;
+}
