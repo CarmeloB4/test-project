@@ -2,14 +2,15 @@
   <div class="logo px-1 ml-2">
     <img src="assets/images/brand/logo.png" alt="logo">
   </div>
-  <div class="weather-container d-flex flex-column align-items-center">
-    <div class="search d-flex justify-content-around mb-4">
-      <input type="text" placeholder="Insert City..." [formControl]="cityForm">
-      <button class="ms-2" (click)="getCurrentWeather()" [disabled]="!cityForm.valid">Search</button>
+    <div class="weather-container d-flex flex-column align-items-center">
+      <div class="search d-flex justify-content-around mb-4">
+        <input type="text" placeholder="Insert City..." [formControl]="cityForm">
+        <button class="ms-2" (click)="getCurrentWeather()" [disabled]="!cityForm.valid">Search</button>
+      </div>
+      <mat-spinner *ngIf="loaderService.showSpinner | async" class="position-absolute top-50 align-self-center"></mat-spinner>
+      <ng-container *ngIf="currentWeather">
+        <app-weather-card class="mt-4 position-relative" [currentWeather]="currentWeather"></app-weather-card>
+        <button class="cta-button mt-4" routerLink="/dashboard">Should I Stay or Should I go</button>
+      </ng-container>
     </div>
-    <ng-container *ngIf="currentWeather">
-      <app-weather-card class="mt-4" [currentWeather]="currentWeather"></app-weather-card>
-      <button class="cta-button mt-4" routerLink="/dashboard">Should I Stay or Should I go</button>
-    </ng-container>
-  </div>
 </div>

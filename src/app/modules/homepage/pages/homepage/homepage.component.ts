@@ -3,6 +3,7 @@ import { WeatherFacade } from "../../../../shared/store/facades/weather.facade";
 import { Weather } from "../../../../shared/models/weather.model";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Subject, takeUntil } from "rxjs";
+import {LoaderService} from "../../../../shared/services/loader.service";
 
 @Component({
   selector: 'app-homepage',
@@ -14,7 +15,9 @@ export class HomepageComponent implements OnInit, OnDestroy {
   public cityForm = this.fb.control('', [Validators.required, Validators.minLength(2)]);
 
   private destroy$ = new Subject<void>();
-  constructor(private readonly weatherFacade: WeatherFacade, private readonly fb: FormBuilder) { }
+  constructor(private readonly weatherFacade: WeatherFacade,
+              private readonly fb: FormBuilder,
+              public loaderService: LoaderService) { }
 
   ngOnInit(): void {
     this.setWeatherData()
