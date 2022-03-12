@@ -23,7 +23,7 @@
           [(ngModel)]="userWeigth"
         >
         </mat-slider>
-        <span class="ms-3 font-weight-bold">{{ userWeigth }}</span>
+        <span class="ms-3 font-weight-bold">{{ userWeigth }} kg</span>
       </div>
       <div class="mt-4">
         <h3>Insert time of activity</h3>
@@ -36,7 +36,7 @@
           [(ngModel)]="timeOfActivity"
         >
         </mat-slider>
-        <span class="ms-3 font-weight-bold">{{ timeOfActivity }}</span>
+        <span class="ms-3 font-weight-bold">{{ timeOfActivity }} h</span>
       </div>
       <div class="calculate align-self-center mt-4">
         <button (click)="calculateCalories.emit({ sport: data?.sport!, weigth: userWeigth, timeOfActivity })">Calculate</button>
