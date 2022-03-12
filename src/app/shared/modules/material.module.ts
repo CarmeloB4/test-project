@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 
 export const MODULES = [
   MatDialogModule,
-  MatSliderModule
+  MatSliderModule,
+  MatSnackBarModule
 ];
 
 @NgModule({

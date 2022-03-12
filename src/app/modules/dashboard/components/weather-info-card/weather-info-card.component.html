@@ -1,8 +1,8 @@
-<div class="weather-info-container d-flex justify-content-between p-3">
+<div class="weather-info-container d-flex justify-content-between p-3" *ngIf="currentWeather">
   <div class="d-flex flex-column">
-    <h1>{{currentWeather?.temperature}}°</h1>
-    <h2>{{currentWeather?.name}}</h2>
-    <h3>{{currentWeather?.country}}</h3>
+    <h1>{{currentWeather.temperature}}°</h1>
+    <h2>{{currentWeather.name}}</h2>
+    <h3>{{currentWeather.country}}</h3>
   </div>
   <div>
     <img [src]="currentWeather!.weather_icons[0]" alt="weather-icon">
