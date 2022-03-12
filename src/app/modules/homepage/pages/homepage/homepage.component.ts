@@ -13,7 +13,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   public currentWeather!: Weather | null;
   public cityForm = this.fb.control('', Validators.required);
 
-  private destroy$ = new Subject();
+  private destroy$ = new Subject<void>();
   constructor(private readonly weatherFacade: WeatherFacade, private readonly fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.destroy$.next()
     this.destroy$.complete();
   }
 

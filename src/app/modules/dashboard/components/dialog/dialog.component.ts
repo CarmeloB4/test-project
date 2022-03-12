@@ -1,10 +1,18 @@
-import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Film } from "../../../../shared/models/film.model";
 
 interface UserData {
   sport: string;
   weigth: number;
   timeOfActivity: number;
+}
+
+interface DialogData {
+  isStay: boolean;
+  sport?: string;
+  payload?: Film;
+  calories?: number;
 }
 
 @Component({
@@ -20,7 +28,7 @@ export class DialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {}
 
   onNoClick(): void {

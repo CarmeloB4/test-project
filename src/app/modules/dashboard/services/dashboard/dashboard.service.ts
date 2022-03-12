@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from "rxjs";
+import { Observable, of } from "rxjs";
 
 export interface Sports {
   outdoor: boolean;
   sport: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class DashboardService {
   private sports:Sports[] = [
     { outdoor: true, sport:"tennis" },

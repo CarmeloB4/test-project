@@ -7,7 +7,7 @@ import { Weather, WeatherResponse } from "../../../shared/models/weather.model";
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class WeatherApiService {
 
   constructor(private http: HttpClient) { }
 

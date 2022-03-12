@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 export const MODULES = [

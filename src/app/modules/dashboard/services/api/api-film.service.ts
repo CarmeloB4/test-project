@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {map, Observable} from "rxjs";
-import {environment} from "../../../../../environments/environment";
-import {Film, FilmResponse} from "../../../../shared/models/film.model";
-import {Weather} from "../../../../shared/models/weather.model";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { map, Observable } from "rxjs";
+import { environment } from "../../../../../environments/environment";
+import { Film, FilmResponse } from "../../../../shared/models/film.model";
 
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
+
 export class ApiFilmService {
 
   constructor(private http: HttpClient) { }
@@ -15,7 +14,7 @@ export class ApiFilmService {
   public getRandomFilm(): Observable<Film> {
     const randomFilmId = Math.floor(Math.random() * (1000 - 500 + 1) + 500);
 
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('api_key', environment.APY_KEY_FILM)
       .set('language','it-IT')
 

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Weather} from "../../../../shared/models/weather.model";
-import {Subject, takeUntil} from "rxjs";
-import {WeatherFacade} from "../../../../shared/store/facades/weather.facade";
-import {ApiFilmService} from "../../services/api/api-film.service";
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { Weather } from "../../../../shared/models/weather.model";
+import { Subject, takeUntil } from "rxjs";
+import { WeatherFacade } from "../../../../shared/store/facades/weather.facade";
+import { ApiFilmService } from "../../services/api/api-film.service";
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import {Film} from "../../../../shared/models/film.model";
-import {DashboardService, Sports} from "../../services/dashboard/dashboard.service";
+import { Film } from "../../../../shared/models/film.model";
+import { DashboardService } from "../../services/dashboard/dashboard.service";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -16,7 +16,7 @@ import {DashboardService, Sports} from "../../services/dashboard/dashboard.servi
 export class DashboardPageComponent implements OnInit {
   public currentWeather!: Weather | null;
   public recommendedSports!: string[];
-  private destroy$ = new Subject();
+  private destroy$ = new Subject<void>();
   constructor(public dialog: MatDialog, private readonly weatherFacade: WeatherFacade, private service:ApiFilmService, private serviceDashboard: DashboardService) { }
 
   ngOnInit(): void {
@@ -25,6 +25,7 @@ export class DashboardPageComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
+    this.destroy$.next();
     this.destroy$.complete();
   }
 
@@ -36,18 +37,18 @@ export class DashboardPageComponent implements OnInit {
     dialogRef.componentInstance.calculateCalories.subscribe((result) => {
       this.serviceDashboard.getCalculatedCalories(result.sport,result.weigth,result.timeOfActivity)
         .pipe(takeUntil(this.destroy$))
-        .subscribe((response) => {
-        dialogRef.componentInstance.data = {isStay, sport, calories: response}
-      })
+        .subscribe((response) =>
+          dialogRef.componentInstance.data = {isStay, sport, calories: response}
+      )
     })
   }
 
   public getRandomFilm(): void {
     this.service.getRandomFilm()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((response) => {
-      this.openDialog(true, undefined, response)
-    })
+      .subscribe((response) =>
+        this.openDialog(true, undefined, response)
+    )
   }
 
   private getSports(): void {
