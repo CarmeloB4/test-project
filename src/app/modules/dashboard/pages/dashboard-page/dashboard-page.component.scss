@@ -30,4 +30,13 @@
       }
     }
   }
+
+  .error {
+    width: rem(300px);
+    height: rem(80px);
+
+    h5 {
+      color: #fff;
+    }
+  }
 }

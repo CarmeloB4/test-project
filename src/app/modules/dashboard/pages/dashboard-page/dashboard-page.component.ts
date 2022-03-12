@@ -34,7 +34,11 @@ export class DashboardPageComponent implements OnInit {
     });
 
     dialogRef.componentInstance.calculateCalories.subscribe((result) => {
-      dialogRef.componentInstance.data = {isStay, calories: 100}
+      this.serviceDashboard.getCalculatedCalories(result.sport,result.weigth,result.timeOfActivity)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((response) => {
+        dialogRef.componentInstance.data = {isStay, sport, calories: response}
+      })
     })
   }
 

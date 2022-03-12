@@ -16,7 +16,7 @@
       <div class="mt-4">
         <h3>Insert your weigth</h3>
         <mat-slider
-          class="mt-2"
+          class="mt-3"
           [max]="200"
           [min]="30"
           [thumbLabel]="true"
@@ -28,7 +28,7 @@
       <div class="mt-4">
         <h3>Insert time of activity</h3>
         <mat-slider
-          class="mt-2"
+          class="mt-3"
           [max]="5"
           [min]="0"
           [tickInterval]="5"
@@ -41,8 +41,8 @@
       <div class="calculate align-self-center mt-4">
         <button (click)="calculateCalories.emit({ sport: data.sport, weigth: userWeigth, timeOfActivity })">Calculate</button>
       </div>
-      <div class="align-self-center mt-5">
-        <h2>{{data.calories}}</h2>
+      <div class="align-self-center mt-5" *ngIf="data.calories">
+        <h2>{{(data.calories).toFixed(2)}} kcal</h2>
       </div>
     </div>
   </ng-template>
