@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from "@angular/forms";
+import {MaterialModule} from "./shared/modules/material.module";
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from "@angular/forms";
         BrowserModule,
         ReactiveFormsModule,
         AppRoutingModule,
+        MaterialModule,
         HttpClientModule,
         StoreModule.forRoot({weatherState: weatherReducer}),
         StoreDevtoolsModule.instrument({maxAge: 25}),

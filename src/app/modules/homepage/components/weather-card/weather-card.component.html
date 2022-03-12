@@ -1,4 +1,4 @@
-<div class="main-container d-flex flex-column p-4">
+<div class="main-container d-flex flex-column p-4" *ngIf="currentWeather">
   <div class="d-flex justify-content-between mb-3 align-items-center">
     <h3 class="temperature">{{currentWeather?.temperature}}°</h3>
     <img [src]="currentWeather!.weather_icons[0]" alt="weather-icon">
