@@ -1,1 +1,20 @@
-<p>dashboard-page works!</p>
+<div class="main-wrapper d-flex flex-column">
+  <div class="logo p-1 ml-2">
+    <img src="assets/images/brand/logo.png" alt="logo" routerLink="">
+  </div>
+  <ng-container *ngIf="currentWeather; else handleError">
+    <div class="main-content d-flex flex-column align-items-center">
+      <app-weather-info-card [currentWeather]="currentWeather"></app-weather-info-card>
+      <h3 class="text-white mt-4">These are the sports we recommend</h3>
+      <div class="d-flex align-items-center justify-content-between mt-1">
+        <app-sport-card *ngFor="let sport of recommendedSports" [sport]="sport" class="p-1" (click)="openDialog(false, sport)"></app-sport-card>
+      </div>
+      <button class="cta-film mt-4 font-weight-bold" (click)="getRandomFilm()">Do you want to watch a film?</button>
+    </div>
+  </ng-container>
+  <ng-template #handleError>
+    <div class="error bg-warning align-self-center">
+      <h5 class="p-4">Ops, try again to insert city</h5>
+    </div>
+  </ng-template>
+</div>

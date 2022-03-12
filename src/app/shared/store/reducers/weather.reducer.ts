@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Weather } from "../../models/weather.model";
-import {getWeather, getWeatherSuccess} from "../actions/weather.action";
+import { getWeatherSuccess } from "../actions/weather.action";
 
 export interface WeatherState {
   weather: Weather | null;
@@ -12,6 +12,5 @@ export const initialState: WeatherState = {
 
 export const weatherReducer = createReducer(
   initialState,
-  on(getWeather,(state) => ({ ...state, weather: state.weather })),
-  on(getWeatherSuccess,(state,action) => ({ ...state, weather: action.weather}))
-)
+  on(getWeatherSuccess,(state,{ weather }) => ({ ...state, weather }))
+);

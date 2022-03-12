@@ -1,2 +1,53 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+/* Import layouts style */
+@import "assets/scss/layouts/main-container";
+
+/* Import font style */
+@import "assets/scss/font";
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #868686;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #212121;
+  border-radius: 10px;
+}
+
+
+.mat-dialog-container {
+  background-color: #212121;
+}
+
+.mat-slider-wrapper {
+  .mat-slider-track-background, .mat-slider-cdk-focused {
+    background-color: #fff;
+    :hover {
+      background-color: #fff;
+    }
+  }
+}
+
+.mat-slider.mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb-label {
+  background-color: #fff;
+}
+
+.mat-slider.mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb,
+.mat-slider.mat-slider-min-value.mat-slider-thumb-label-showing .mat-slider-thumb-label {
+  background-color: #fff;
+}
+
+.mat-slider.mat-slider-min-value.mat-slider-thumb-label-showing.cdk-focused .mat-slider-thumb {
+  background-color: #fff;
+}

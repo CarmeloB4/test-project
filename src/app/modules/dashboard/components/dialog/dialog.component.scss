@@ -1,0 +1,67 @@
+@import "src/assets/scss/variables";
+@import "src/assets/scss/functions";
+
+.dialog {
+  width: rem(300px);
+  height: rem(500px);
+  color: #fff;
+  background-color: $grey;
+  border-radius: rem(10px);
+
+  h1 {
+    font-size: rem(30px);
+  }
+
+  h3 {
+    color: #ffd740;
+    font-size: rem(22px);
+  }
+
+  .film-card {
+    img {
+      width: rem(300px);
+      height: rem(200px);
+    }
+
+    .rate {
+      width: rem(30px);
+      height: rem(30px);
+      border-radius: 50%;
+      background-color: #fff;
+
+      span {
+        font-size: rem(14px);
+        font-weight: bold;
+        color: #000;
+      }
+    }
+  }
+
+  .sport-card {
+    mat-slider {
+      width: rem(200px);
+    }
+
+    .calculate {
+      button {
+        height: rem(40px);
+        width: rem(80px);
+        border-radius: rem(5px);
+        background-color: #273d3d;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+
+  .back-dashboard {
+    button {
+      height: rem(35px);
+      font-weight: bold;
+      background-color: #fff;
+      color: #000;
+      border: none;
+    }
+  }
+
+}

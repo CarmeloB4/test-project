@@ -1,34 +1,37 @@
+@import "src/assets/scss/variables";
+@import "src/assets/scss/functions";
+
 .main-container {
-  background-color: #212121;
+  background-color: $grey;
   color: #fff;
-  width: 280px;
-  height: 300px;
-  border-radius: 10px;
-  box-shadow: 1px 2px 5px #444444;
+  width: rem(280px);
+  height: rem(300px);
+  border-radius: rem(10px);
+  box-shadow: rem(1px) rem(2px) rem(5px) #444444;
 
   img {
-    width: 30px;
+    width: rem(30px);
   }
 
   .icon {
-    width: 20px;
+    width: rem(20px);
   }
 
   h1,h2 {
-    font-size: 18px;
+    font-size: rem(18px);
   }
 
   .temperature {
-    font-size: 28px;
+    font-size: rem(28px);
   }
 
   h3 {
-    font-size: 16px;
+    font-size: rem(16px);
   }
 
   h4 {
     color: #F38A49;
-    font-size: 14px;
+    font-size: rem(14px);
   }
 
   #wind {

@@ -1,38 +1,33 @@
-//add to global styles
-.main-wrapper {
-  width: 100vw;
-  height: 100vh;
-  background: rgb(17,16,16);
-  background: linear-gradient(45deg, rgba(17,16,16,1) 62%, rgba(38,38,37,0.9948354341736695) 90%);
-  overflow: hidden;
+@import "src/assets/scss/functions";
 
+.main-wrapper {
   .logo {
     img {
-      width: 200px;
+      width: rem(200px);
     }
   }
 
   .weather-container {
     .search {
       input {
-        width: 400px;
+        width: rem(400px);
         border: none;
-        height: 40px;
+        height: rem(40px);
 
         &:focus {
           outline: none;
         }
 
         @media screen and (max-width: 767px){
-          width: 200px;
+          width: rem(200px);
         }
       }
 
       button {
-        width: 80px;
+        width: rem(80px);
         background-color: #000;
         color: #fff;
-        border: 1px solid #000;
+        border: rem(1px) solid #000;
 
         &:disabled {
           background-color: dimgray;
@@ -41,12 +36,12 @@
     }
 
     .cta-button {
-      width: 300px;
-      height: 40px;
+      width: rem(300px);
+      height: rem(40px);
       background-color: #000;
       color: #fff;
       font-weight: bold;
-      border: 0.5px solid #fa9470;
+      border: rem(0.5px) solid #fa9470;
       transition: transform .7s ease-in-out;
 
       &:hover {

@@ -12,6 +12,6 @@ export class WeatherFacade {
   constructor(private readonly store: Store<AppState>) {}
 
   public getCurrentWeather(city:string): void {
-    this.store.dispatch(getWeather({city}));
+    this.store.dispatch(getWeather({ city }));
   }
 }

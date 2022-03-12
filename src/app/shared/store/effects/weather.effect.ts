@@ -18,8 +18,8 @@ export class WeatherEffects {
   getWeather$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getWeather),
-      exhaustMap(({city}) => this.apiWeatherService.getWeather(city)
-        .pipe(map((weather) => this.store.dispatch(getWeatherSuccess({weather})))))
+      exhaustMap(({ city }) => this.apiWeatherService.getWeather(city)
+        .pipe(map((weather) => this.store.dispatch(getWeatherSuccess({ weather })))))
     )
   ,{ dispatch: false })
 }

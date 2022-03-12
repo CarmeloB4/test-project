@@ -1,0 +1,53 @@
+<div class="dialog d-flex flex-column justify-content-between">
+  <ng-container *ngIf="data.isStay; else goOut">
+    <div class="film-card">
+      <h1>Title: {{data.payload.title}}</h1>
+      <h5>{{data.payload.release_date | date: 'yyyy'}}</h5>
+      <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{data.payload.poster_path}}" alt="{{data.payload.title}}" class="mt-2">
+      <p class="mt-4">{{data.payload.overview}}</p>
+      <div class="rate text-center p-1">
+        <span>{{data.payload.vote_average}}</span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #goOut>
+    <div class="sport-card d-flex flex-column">
+      <h1>{{data.sport | titlecase}}</h1>
+      <div class="mt-4">
+        <h3>Insert your weigth</h3>
+        <mat-slider
+          class="mt-3"
+          [max]="200"
+          [min]="30"
+          [thumbLabel]="true"
+          [(ngModel)]="userWeigth"
+        >
+        </mat-slider>
+        <span class="ms-3 font-weight-bold">{{userWeigth}}</span>
+      </div>
+      <div class="mt-4">
+        <h3>Insert time of activity</h3>
+        <mat-slider
+          class="mt-3"
+          [max]="5"
+          [min]="0"
+          [tickInterval]="5"
+          [thumbLabel]="true"
+          [(ngModel)]="timeOfActivity"
+        >
+        </mat-slider>
+        <span class="ms-3 font-weight-bold">{{timeOfActivity}}</span>
+      </div>
+      <div class="calculate align-self-center mt-4">
+        <button (click)="calculateCalories.emit({ sport: data.sport, weigth: userWeigth, timeOfActivity })">Calculate</button>
+      </div>
+      <div class="align-self-center mt-5" *ngIf="data.calories">
+        <h2>{{(data.calories).toFixed(2)}} kcal</h2>
+      </div>
+    </div>
+  </ng-template>
+  <div mat-dialog-actions class="back-dashboard align-self-center">
+    <button (click)="onNoClick()">Back to dashboard</button>
+  </div>
+</div>
+
