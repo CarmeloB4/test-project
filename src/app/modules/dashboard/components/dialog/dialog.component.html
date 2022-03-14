@@ -3,7 +3,7 @@
     <div class="film-card">
       <h1>Title: {{ data.payload?.title }}</h1>
       <h5>{{ data.payload?.release_date | date: 'yyyy' }}</h5>
-      <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{data.payload?.poster_path}}" alt="{{ data.payload?.title }}" class="mt-2">
+      <img src="https://image.tmdb.org/t/p/w500/{{data.payload?.poster_path}}" alt="{{ data.payload?.title }}" class="mt-2">
       <p class="mt-4">{{ data.payload?.overview! | truncateText:300 }}</p>
       <div class="rate text-center p-1">
         <span>{{ data.payload?.vote_average }}</span>
