@@ -2,10 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
-This file will be updated in time, to be complete at the end of the project. All information relating to development, functionality and references to any libraries will be written here 📗
+![logo](https://user-images.githubusercontent.com/66789080/158133772-c0670cdd-7419-456f-ab1e-af3b0ecaf9af.png)
+
 
 ## Design reference 🎨
 This is the draft on which the layout and flow of this project is based: [Figma](https://www.figma.com/file/iS8EY0ZxQqCz15J5Jjy2Ju/Prototype---Project?node-id=0%3A1)
+
+## Libraries used 📗
+We used the classic [Bootstrap](https://getbootstrap.com/) library for design and the [Angular Material](https://material.angular.io/) library to use some components
+
+## Deploy ✨
+I used [Vercel](https://vercel.com/) for the deployment, unfortunately I was unable to set the environment variables. This is the link: https://test-project-f30hdcumg-carmelob4.vercel.app/
 
 ## Development server
 
